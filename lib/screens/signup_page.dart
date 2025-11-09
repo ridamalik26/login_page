@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:login_firebase/auth_controller.dart';
 import 'login_page.dart';
 
 class SignUpPage extends StatelessWidget {
@@ -6,6 +7,8 @@ class SignUpPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    var emailController = TextEditingController();
+    var passwordController = TextEditingController();
     double w = MediaQuery.of(context).size.width;
     double h = MediaQuery.of(context).size.height;
 
@@ -25,26 +28,9 @@ class SignUpPage extends StatelessWidget {
               ),
             ),
             SizedBox(height: h * 0.04),
-
-            // Username field
-            TextField(
-              style: const TextStyle(color: Colors.white),
-              decoration: InputDecoration(
-                hintText: "Enter your username",
-                hintStyle: const TextStyle(color: Colors.grey),
-                prefixIcon: const Icon(Icons.person, color: Colors.white),
-                filled: true,
-                fillColor: Colors.grey.shade900,
-                border: OutlineInputBorder(
-                  borderRadius: BorderRadius.circular(12),
-                  borderSide: BorderSide.none,
-                ),
-              ),
-            ),
-            SizedBox(height: h * 0.025),
-
             // Email field
             TextField(
+              controller: emailController,
               style: const TextStyle(color: Colors.white),
               decoration: InputDecoration(
                 hintText: "Enter your email",
@@ -62,6 +48,7 @@ class SignUpPage extends StatelessWidget {
 
             // Password field
             TextField(
+              controller: passwordController,
               obscureText: true,
               style: const TextStyle(color: Colors.white),
               decoration: InputDecoration(
@@ -89,7 +76,7 @@ class SignUpPage extends StatelessWidget {
                       borderRadius: BorderRadius.circular(12)),
                 ),
                 onPressed: () {
-                  // TODO: Add sign-up logic
+                  AuthController.instance.register(emailController.text.trim(), passwordController.text.trim());
                 },
                 child: Text(
                   "Sign Up",

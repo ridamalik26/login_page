@@ -31,9 +31,9 @@ class AuthController extends GetxController {
     }
   }
 
-  void register(String email, password){
+  Future<void> register(String email, password) async {
     try{
-      auth.createUserWithEmailAndPassword(email: email, password: password);
+      await auth.createUserWithEmailAndPassword(email: email, password: password);
     }catch(e){
       Get.snackbar("About User", "User Message",
       backgroundColor: Colors.redAccent,
