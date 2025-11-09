@@ -11,6 +11,6 @@ class AppRoutes {
   static Map<String, WidgetBuilder> get routes => {
     login: (context) => const LoginPage(),
     signup: (context) => const SignUpPage(),
-    welcome: (context) => const WelcomePage(),
+    welcome: (context) =>  const WelcomePage(email: 'Guest',),
   };
 }

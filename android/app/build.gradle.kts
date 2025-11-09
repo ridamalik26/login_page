@@ -25,12 +25,11 @@ android {
 
     defaultConfig {
         applicationId = "com.example.login_firebase"
-        minSdk = flutter.minSdkVersion
+        minSdk = 23
         targetSdk = flutter.targetSdkVersion
         versionCode = flutter.versionCode
         versionName = flutter.versionName
 
-        // 🔹 Correct KTS syntax for enabling MultiDex
         multiDexEnabled = true
     }
 

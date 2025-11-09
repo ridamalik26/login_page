@@ -99,7 +99,7 @@ class SignUpPage extends StatelessWidget {
                   onTap: () {
                     Navigator.push(
                       context,
-                      MaterialPageRoute(builder: (_) => const LoginPage()),
+                      MaterialPageRoute(builder: (_) => LoginPage()),
                     );
                   },
                   child: const Text(

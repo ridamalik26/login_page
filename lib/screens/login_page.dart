@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:login_firebase/auth_controller.dart';
 import 'signup_page.dart';
 
 class LoginPage extends StatelessWidget {
@@ -6,6 +7,8 @@ class LoginPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    var emailController = TextEditingController();
+    var passwordController = TextEditingController();
     double w = MediaQuery.of(context).size.width;
     double h = MediaQuery.of(context).size.height;
 
@@ -28,6 +31,7 @@ class LoginPage extends StatelessWidget {
 
             // Email field
             TextField(
+              controller: emailController,
               style: const TextStyle(color: Colors.white),
               decoration: InputDecoration(
                 hintText: "Enter your email",
@@ -45,6 +49,7 @@ class LoginPage extends StatelessWidget {
 
             // Password field
             TextField(
+              controller: passwordController,
               obscureText: true,
               style: const TextStyle(color: Colors.white),
               decoration: InputDecoration(
@@ -72,7 +77,7 @@ class LoginPage extends StatelessWidget {
                       borderRadius: BorderRadius.circular(12)),
                 ),
                 onPressed: () {
-                  // TODO: Add login logic
+                  AuthController.instance.login(emailController.text.trim(), passwordController.text.trim());
                 },
                 child: Text(
                   "Log In",

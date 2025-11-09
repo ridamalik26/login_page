@@ -4,10 +4,13 @@ import 'package:get/get.dart';
 import 'package:get/get_core/src/get_main.dart';
 import 'package:login_firebase/auth_controller.dart';
 import 'routes/app_routes.dart';
+import 'firebase_options.dart';
 
 Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();
-  await Firebase.initializeApp().then((value)=> Get.put(AuthController()));
+  await Firebase.initializeApp(
+    options: DefaultFirebaseOptions.currentPlatform,)
+      .then((value)=> Get.put(AuthController()));
   runApp(const StudyApp());
 }
 
@@ -16,7 +19,7 @@ class StudyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
+    return GetMaterialApp(
       title: 'Study App',
       debugShowCheckedModeBanner: false,
       theme: ThemeData(
