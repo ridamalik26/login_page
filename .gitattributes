@@ -1,5 +1,12 @@
-*.dart linguist-language=Dart
-*.yaml linguist-language=Dart
-*.yml linguist-language=Dart
-lib/* linguist-language=Dart
+# Force classify everything in lib/ as Dart
+lib/** linguist-language=Dart
 
+# Force all Dart files
+*.dart linguist-language=Dart
+
+# Ignore native code folders for language stats
+android/** linguist-vendored
+ios/** linguist-vendored
+macos/** linguist-vendored
+windows/** linguist-vendored
+linux/** linguist-vendored
