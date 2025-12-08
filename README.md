@@ -1,16 +1,15 @@
-# login_firebase
+🔐 Modern Login Page (Firebase Authentication)
+  A simple and beautifully designed Login Page built with clean UI/UX and integrated with   Firebase Authentication for secure and fast login. The design focuses on clarity,         smooth interactions, and a user-friendly experience.
 
-A new Flutter project.
+✨ Features
+  🎨 Clean & Modern UI/UX
+  🔐 Firebase Authentication
+  ✔️ Form Validation
+  ⚠️ Error Handling & User Feedback
+  📱 Responsive Layout
+  👉 Smooth transitions & minimal design
 
-## Getting Started
-
-This project is a starting point for a Flutter application.
-
-A few resources to get you started if this is your first Flutter project:
-
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
-
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+🛠 Tech Stack
+  Dart / Flutter (or your tech)
+  Firebase Authentication
+  Firebase Console  
